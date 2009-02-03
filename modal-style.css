@@ -1,0 +1,32 @@
+body{
+
+}
+div.modal-overlay{
+	top: 0;
+	left: 0;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	z-index: 1000000;
+	background: #000;
+	filter:alpha(opacity=70);
+	-moz-opacity:0.7;
+	-khtml-opacity: 0.7;
+	opacity: 0.7;
+}
+div.modal-window{
+	top: 25%;
+	left: 25%;
+	position: absolute;
+	width: 50%;
+	z-index: 1000001;
+	background: #fff;
+	border: solid 5px #ddd;
+	padding: 20px;
+}
+span#modal-close-btn{
+	color: red;
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+}
