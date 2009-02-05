@@ -16,6 +16,16 @@ To load @modal.js@, add the following to the HEAD of your page or optionally to 
   <script src="/javascripts/modal.js" type="text/javascript"></script>
 </pre>
 
+To create a new modal window you'll need to create an instance of the class and pass the element to the @show()@ method to display it in the modal window. 
+
+<pre style="background: #EBF1F4;border: 1px solid #DDD;">
+  window = new ModalWindow();
+  myElem = new Element('div').update("Hello")'
+  window.show(myElem, true);
+</pre>
+
+The boolean value passed to the function is to show the overlay that'll hide the rest of the window. Set it to false to make the window appear normally.
+
 
 h2. The Distribution
 

@@ -4,20 +4,47 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <link rel="stylesheet" href="modal-style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="../src/modal-style.css" type="text/css" media="screen" title="no title" charset="utf-8">
   
-  <script src="prototype.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../lib/prototype.js" type="text/javascript" charset="utf-8"></script>
   
-  <script src="modal.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../src/modal.js" type="text/javascript" charset="utf-8"></script>
 	<title>index</title>
 	
 </head>
 
 <body>
 
-<a id="get_win" href="#">Get Win</a>
+<ul>
+  <li><a id="get_win_text" href="#">Modal Window with text.</a></li>
+  <li><a id="get_win_image" href="#">Modal Window with an image (without window overlay).</a></li>
+  <li><a id="get_win_form" href="#">Modal Window with a form.</a></li>
+</ul>
 
-<div id="modal-container"></div>
+
+<script type="text/javascript" charset="utf-8">
+  get = new ModalWindow();
+
+  Event.observe(window, 'load', function() {
+  	$("get_win_text").observe('click',function(e) {
+  	  var textElem = new Element('div').update("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.");
+  		get.show(textElem,true);
+  	})
+  	$("get_win_image").observe('click',function(e){
+  	  var image = new Element('img',{src:'http:\/\/farm4.static.flickr.com\/3203\/2415557716_5aede507a6.jpg?v=0'});
+  	  get.show(image);
+  	});
+  	$("get_win_form").observe('click',function(e) {
+  	  var form = new Element('form');
+  	  var input = new Element('input');
+  	  var button = new Element('input',{type:'submit'});
+  	  form.insert(input);
+  	  form.insert(button);
+  	  get.show(form,true);
+  	});
+  });
+</script>
+
 
 </body>
 </html>
